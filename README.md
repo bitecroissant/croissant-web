@@ -13,3 +13,6 @@
 ## 3、引入 `eslint`
 
 [规则](https://github.com/antfu/eslint-config)
+
+# 参考
+1. 原型图： https://excalidraw.com/
