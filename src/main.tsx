@@ -5,8 +5,10 @@ import { ErrorPage } from './components/ErrorPage'
 import { Auth0Provider, Auth0ProviderOptions } from '@auth0/auth0-react'
 import { Home } from './components/Home'
 
-import 'virtual:svgsprites'
+import './assets/stylesheets/font.scss'
 import './index.css'
+
+import 'virtual:svgsprites'
 
 const router = createBrowserRouter([
   {
@@ -43,8 +45,8 @@ const auth0ProviderOptions: Auth0ProviderOptions = {
 
 root.render(
   <StrictMode>
-    {/* <Auth0Provider {...auth0ProviderOptions} > */}
+    <Auth0Provider {...auth0ProviderOptions} >
       <RouterProvider router={router} />
-    {/* </Auth0Provider> */}
+    </Auth0Provider>
   </StrictMode>,
 )

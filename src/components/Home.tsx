@@ -2,16 +2,25 @@ import { Button } from "@/components/ui/button"
 
 import { useAuth0 } from "@auth0/auth0-react"
 import { Profile } from "./Profile"
+import { PageLoading } from "./PageLoading"
 
 export const Home: React.FC = () => {
-  // const { loginWithRedirect, logout } = useAuth0()
+  const {
+    loginWithRedirect, logout,
+    isLoading, isAuthenticated, user,
+    getAccessTokenSilently
+  } = useAuth0()
+
+  if (isLoading) {
+    return <PageLoading />
+  }
 
   const onClickLogin = () => {
-    // loginWithRedirect()
+    loginWithRedirect()
   }
 
   const onClickLogout = () => {
-    // logout()
+    logout()
   }
 
   return (
@@ -23,7 +32,9 @@ export const Home: React.FC = () => {
 
       <p><Button onClick={onClickLogout} >注销</Button></p>
 
-      <Profile />
+      { isAuthenticated && <Profile user={user} /> }
+
+      { getAccessTokenSilently() }
     </div>
   )
 }

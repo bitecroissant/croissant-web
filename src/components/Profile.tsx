@@ -1,16 +1,14 @@
-import { useAuth0 } from "@auth0/auth0-react"
-import s from './Profile.module.css'
-import { Icon } from "./Icon"
+import { User } from "@auth0/auth0-react"
 
-export const Profile: React.FC = () => {
-  // const { isLoading, isAuthenticated, user, getAccessTokenSilently } = useAuth0()
+interface Props {
+  user?: User
+}
 
-  // if (isLoading) {
-  if (true) {
-    return <Icon name="loading" />
-  }
-
+export const Profile: React.FC<Props> = (props) => {
+  const { user } = props
   return (
-    <div>Profile </div>
+    <div>
+      Profile
+    </div>
   )
 }
