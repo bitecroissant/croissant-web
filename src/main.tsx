@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import { ErrorPage } from './components/ErrorPage'
+import { Auth0Provider, Auth0ProviderOptions } from '@auth0/auth0-react'
+import { Home } from './components/Home'
 
 const router = createBrowserRouter([
   {
@@ -9,8 +11,8 @@ const router = createBrowserRouter([
     element: <Outlet />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <div>请选择<ul><li>home</li><li>welcome</li><li>list</li></ul></div> },
-      { 
+      { index: true, element: <Home /> },
+      {
         path: 'solar-terms',
         element: <div> 空 <Outlet /> </div>,
         children: [
@@ -28,8 +30,18 @@ const div = document.getElementById('root')
 
 const root = createRoot(div!)
 
+const auth0ProviderOptions: Auth0ProviderOptions = {
+  domain: 'bitecroissant.jp.auth0.com',
+  clientId: '9lu1GnDXmZyT6CS8CfTCJh81eoJrOGMr',
+  authorizationParams: {
+    redirect_uri: window.location.origin
+  }
+}
+
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    {/* <Auth0Provider {...auth0ProviderOptions} > */}
+      <RouterProvider router={router} />
+    {/* </Auth0Provider> */}
   </StrictMode>,
 )
