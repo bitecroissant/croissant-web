@@ -11,9 +11,7 @@ export const Home: React.FC = () => {
     getAccessTokenSilently
   } = useAuth0()
 
-  if (isLoading) {
-    return <PageLoading />
-  }
+  
 
   const onClickLogin = () => {
     loginWithRedirect()
@@ -23,18 +21,28 @@ export const Home: React.FC = () => {
     logout()
   }
 
+  const onClickLog = async () => {
+    window.console.log(await getAccessTokenSilently())
+  }
+
+  if (isLoading) {
+    return <PageLoading />
+  }
+
   return (
     <div>
-      home
+      <h3>Croissang Web App Home Page.</h3>
+
+      { isAuthenticated && <Profile user={user} /> }
+
       <div>请选择<ul><li>home</li><li>welcome</li><li>list</li></ul></div>
 
       <p><Button onClick={onClickLogin} >去登录</Button></p>
 
       <p><Button onClick={onClickLogout} >注销</Button></p>
 
-      { isAuthenticated && <Profile user={user} /> }
+      <p><Button onClick={onClickLog} >打印</Button></p>
 
-      { getAccessTokenSilently() }
     </div>
   )
 }
