@@ -15,4 +15,10 @@
 [规则](https://github.com/antfu/eslint-config)
 
 # 参考
-1. 原型图： https://excalidraw.com/
+## 1. 原型图： https://excalidraw.com/
+
+## 2. Loader
+
+[CSS 加载器](https://css-loaders.com/maze/)
+
+[CSS 旋转加载器专题](https://css-tricks.com/single-element-loaders-the-spinner/)
