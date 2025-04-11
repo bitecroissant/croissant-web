@@ -5,6 +5,8 @@ import { ErrorPage } from './components/ErrorPage'
 import { Auth0Provider, Auth0ProviderOptions } from '@auth0/auth0-react'
 import { Home } from './components/Home'
 
+import './index.css'
+
 const router = createBrowserRouter([
   {
     path: '/',
