@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
   }
 
   const onClickLogout = () => {
-    logout()
+    logout({ logoutParams: { returnTo: window.location.origin } })
   }
 
   const onClickLog = async () => {
