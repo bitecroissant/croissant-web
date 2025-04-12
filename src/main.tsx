@@ -6,7 +6,7 @@ import { Auth0Provider, Auth0ProviderOptions } from '@auth0/auth0-react'
 import { Home } from './components/Home'
 
 import './assets/stylesheets/font.scss'
-import './index.css'
+import './index.scss'
 
 import 'virtual:svgsprites'
 

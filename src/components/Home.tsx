@@ -76,13 +76,13 @@ export const Home: React.FC = () => {
 
 
   // useSWR
-  const { data, error, isLoading: isLoadingData } = useSWR('/events', fetcher)
+  // const { data, error, isLoading: isLoadingData } = useSWR('/events', fetcher)
 
-  if (error) return <div>failed to load</div>
+  // if (error) return <div>failed to load</div>
 
-  if (isLoading || isLoadingData) {
-    return <PageLoading />
-  }
+  // if (isLoading || isLoadingData) {
+  //   return <PageLoading />
+  // }
 
   return (
     <div>
@@ -93,7 +93,7 @@ export const Home: React.FC = () => {
       <p>user {JSON.stringify(user)}</p>
       <p>ak {ak}</p>
 
-      <p>{JSON.stringify(data)}</p>
+      {/* <p>{JSON.stringify(data)}</p> */}
 
       <p><Button onClick={onClickLogin} >去登录</Button></p>
 
