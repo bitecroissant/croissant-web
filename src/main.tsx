@@ -40,6 +40,7 @@ const auth0ProviderOptions: Auth0ProviderOptions = {
   clientId: '9lu1GnDXmZyT6CS8CfTCJh81eoJrOGMr',
   authorizationParams: {
     redirect_uri: window.location.origin,
+    audience: 'https://croissant.jellybyte.uno',
   }
 }
 
